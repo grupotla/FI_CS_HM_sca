@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SCA_PRODUCCION", ".", "{F13BD25F-A3D0-4167-B095-41034D1DBABB}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/SCA_PRODUCCION"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Desktop\PROYECTOS\SCA_PRODUCCION\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\SCA_PRODUCCION\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/SCA_PRODUCCION"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Desktop\PROYECTOS\SCA_PRODUCCION\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\SCA_PRODUCCION\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52193"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F13BD25F-A3D0-4167-B095-41034D1DBABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13BD25F-A3D0-4167-B095-41034D1DBABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://www.facturaelectronica.cr/CargaFactura/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://www.facturaelectronica.cr/CargaFactura/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://www.facturaelectronica.cr/CargaFactura/">
+      <s:element name="insertarFacturas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="facturas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertarFacturasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertarFacturasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertarFacturasCorreo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="facturas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertarFacturasCorreoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="insertarFacturasPagadas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="facturas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertarFacturasPagadasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertarFacturasPagadasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pagarFactura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Consecutivo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pagarFacturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pagarFacturaResult" nillable="true" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Consecutivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdTipoDocumento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaDocumentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaRespuestaHacienda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Consecutivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdTipoDocumento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaRespuestaHaciendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaRespuestaHaciendaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaRespuestaCorreo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Consecutivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdTipoDocumento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaRespuestaCorreoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaRespuestaCorreoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="decimal" nillable="true" type="s:decimal" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertarFacturasSoapIn">
+    <wsdl:part name="parameters" element="tns:insertarFacturas" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasSoapOut">
+    <wsdl:part name="parameters" element="tns:insertarFacturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasCorreoSoapIn">
+    <wsdl:part name="parameters" element="tns:insertarFacturasCorreo" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasCorreoSoapOut">
+    <wsdl:part name="parameters" element="tns:insertarFacturasCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasPagadasSoapIn">
+    <wsdl:part name="parameters" element="tns:insertarFacturasPagadas" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasPagadasSoapOut">
+    <wsdl:part name="parameters" element="tns:insertarFacturasPagadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="pagarFacturaSoapIn">
+    <wsdl:part name="parameters" element="tns:pagarFactura" />
+  </wsdl:message>
+  <wsdl:message name="pagarFacturaSoapOut">
+    <wsdl:part name="parameters" element="tns:pagarFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaDocumento" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaHaciendaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaRespuestaHacienda" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaHaciendaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaRespuestaHaciendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaCorreoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaRespuestaCorreo" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaCorreoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaRespuestaCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasHttpGetIn">
+    <wsdl:part name="facturas" type="s:string" />
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasCorreoHttpGetIn">
+    <wsdl:part name="facturas" type="s:string" />
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasCorreoHttpGetOut" />
+  <wsdl:message name="insertarFacturasPagadasHttpGetIn">
+    <wsdl:part name="facturas" type="s:string" />
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasPagadasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="pagarFacturaHttpGetIn">
+    <wsdl:part name="IdEmpresa" type="s:string" />
+    <wsdl:part name="Consecutivo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="pagarFacturaHttpGetOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDocumentoHttpGetIn">
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+    <wsdl:part name="IdEmpresa" type="s:string" />
+    <wsdl:part name="Consecutivo" type="s:string" />
+    <wsdl:part name="IdTipoDocumento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDocumentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaHaciendaHttpGetIn">
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+    <wsdl:part name="IdEmpresa" type="s:string" />
+    <wsdl:part name="Consecutivo" type="s:string" />
+    <wsdl:part name="IdTipoDocumento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaHaciendaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaCorreoHttpGetIn">
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+    <wsdl:part name="IdEmpresa" type="s:string" />
+    <wsdl:part name="Consecutivo" type="s:string" />
+    <wsdl:part name="IdTipoDocumento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaCorreoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasHttpPostIn">
+    <wsdl:part name="facturas" type="s:string" />
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasCorreoHttpPostIn">
+    <wsdl:part name="facturas" type="s:string" />
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasCorreoHttpPostOut" />
+  <wsdl:message name="insertarFacturasPagadasHttpPostIn">
+    <wsdl:part name="facturas" type="s:string" />
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertarFacturasPagadasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="pagarFacturaHttpPostIn">
+    <wsdl:part name="IdEmpresa" type="s:string" />
+    <wsdl:part name="Consecutivo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="pagarFacturaHttpPostOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDocumentoHttpPostIn">
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+    <wsdl:part name="IdEmpresa" type="s:string" />
+    <wsdl:part name="Consecutivo" type="s:string" />
+    <wsdl:part name="IdTipoDocumento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDocumentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaHaciendaHttpPostIn">
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+    <wsdl:part name="IdEmpresa" type="s:string" />
+    <wsdl:part name="Consecutivo" type="s:string" />
+    <wsdl:part name="IdTipoDocumento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaHaciendaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaCorreoHttpPostIn">
+    <wsdl:part name="emailUser" type="s:string" />
+    <wsdl:part name="passUser" type="s:string" />
+    <wsdl:part name="IdEmpresa" type="s:string" />
+    <wsdl:part name="Consecutivo" type="s:string" />
+    <wsdl:part name="IdTipoDocumento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRespuestaCorreoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="GTICargaBatchSoap">
+    <wsdl:operation name="insertarFacturas">
+      <wsdl:input message="tns:insertarFacturasSoapIn" />
+      <wsdl:output message="tns:insertarFacturasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasCorreo">
+      <wsdl:input message="tns:insertarFacturasCorreoSoapIn" />
+      <wsdl:output message="tns:insertarFacturasCorreoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasPagadas">
+      <wsdl:input message="tns:insertarFacturasPagadasSoapIn" />
+      <wsdl:output message="tns:insertarFacturasPagadasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pagarFactura">
+      <wsdl:input message="tns:pagarFacturaSoapIn" />
+      <wsdl:output message="tns:pagarFacturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDocumento">
+      <wsdl:input message="tns:ConsultaDocumentoSoapIn" />
+      <wsdl:output message="tns:ConsultaDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaHacienda">
+      <wsdl:input message="tns:ConsultaRespuestaHaciendaSoapIn" />
+      <wsdl:output message="tns:ConsultaRespuestaHaciendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaCorreo">
+      <wsdl:input message="tns:ConsultaRespuestaCorreoSoapIn" />
+      <wsdl:output message="tns:ConsultaRespuestaCorreoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GTICargaBatchHttpGet">
+    <wsdl:operation name="insertarFacturas">
+      <wsdl:input message="tns:insertarFacturasHttpGetIn" />
+      <wsdl:output message="tns:insertarFacturasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasCorreo">
+      <wsdl:input message="tns:insertarFacturasCorreoHttpGetIn" />
+      <wsdl:output message="tns:insertarFacturasCorreoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasPagadas">
+      <wsdl:input message="tns:insertarFacturasPagadasHttpGetIn" />
+      <wsdl:output message="tns:insertarFacturasPagadasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pagarFactura">
+      <wsdl:input message="tns:pagarFacturaHttpGetIn" />
+      <wsdl:output message="tns:pagarFacturaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDocumento">
+      <wsdl:input message="tns:ConsultaDocumentoHttpGetIn" />
+      <wsdl:output message="tns:ConsultaDocumentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaHacienda">
+      <wsdl:input message="tns:ConsultaRespuestaHaciendaHttpGetIn" />
+      <wsdl:output message="tns:ConsultaRespuestaHaciendaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaCorreo">
+      <wsdl:input message="tns:ConsultaRespuestaCorreoHttpGetIn" />
+      <wsdl:output message="tns:ConsultaRespuestaCorreoHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GTICargaBatchHttpPost">
+    <wsdl:operation name="insertarFacturas">
+      <wsdl:input message="tns:insertarFacturasHttpPostIn" />
+      <wsdl:output message="tns:insertarFacturasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasCorreo">
+      <wsdl:input message="tns:insertarFacturasCorreoHttpPostIn" />
+      <wsdl:output message="tns:insertarFacturasCorreoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasPagadas">
+      <wsdl:input message="tns:insertarFacturasPagadasHttpPostIn" />
+      <wsdl:output message="tns:insertarFacturasPagadasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pagarFactura">
+      <wsdl:input message="tns:pagarFacturaHttpPostIn" />
+      <wsdl:output message="tns:pagarFacturaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDocumento">
+      <wsdl:input message="tns:ConsultaDocumentoHttpPostIn" />
+      <wsdl:output message="tns:ConsultaDocumentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaHacienda">
+      <wsdl:input message="tns:ConsultaRespuestaHaciendaHttpPostIn" />
+      <wsdl:output message="tns:ConsultaRespuestaHaciendaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaCorreo">
+      <wsdl:input message="tns:ConsultaRespuestaCorreoHttpPostIn" />
+      <wsdl:output message="tns:ConsultaRespuestaCorreoHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GTICargaBatchSoap" type="tns:GTICargaBatchSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertarFacturas">
+      <soap:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/insertarFacturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasCorreo">
+      <soap:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/insertarFacturasCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasPagadas">
+      <soap:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/insertarFacturasPagadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pagarFactura">
+      <soap:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/pagarFactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDocumento">
+      <soap:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/ConsultaDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaHacienda">
+      <soap:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/ConsultaRespuestaHacienda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaCorreo">
+      <soap:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/ConsultaRespuestaCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GTICargaBatchSoap12" type="tns:GTICargaBatchSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertarFacturas">
+      <soap12:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/insertarFacturas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasCorreo">
+      <soap12:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/insertarFacturasCorreo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasPagadas">
+      <soap12:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/insertarFacturasPagadas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pagarFactura">
+      <soap12:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/pagarFactura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDocumento">
+      <soap12:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/ConsultaDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaHacienda">
+      <soap12:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/ConsultaRespuestaHacienda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaCorreo">
+      <soap12:operation soapAction="https://www.facturaelectronica.cr/CargaFactura/ConsultaRespuestaCorreo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GTICargaBatchHttpGet" type="tns:GTICargaBatchHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="insertarFacturas">
+      <http:operation location="/insertarFacturas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasCorreo">
+      <http:operation location="/insertarFacturasCorreo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasPagadas">
+      <http:operation location="/insertarFacturasPagadas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pagarFactura">
+      <http:operation location="/pagarFactura" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDocumento">
+      <http:operation location="/ConsultaDocumento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaHacienda">
+      <http:operation location="/ConsultaRespuestaHacienda" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaCorreo">
+      <http:operation location="/ConsultaRespuestaCorreo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GTICargaBatchHttpPost" type="tns:GTICargaBatchHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="insertarFacturas">
+      <http:operation location="/insertarFacturas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasCorreo">
+      <http:operation location="/insertarFacturasCorreo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="insertarFacturasPagadas">
+      <http:operation location="/insertarFacturasPagadas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pagarFactura">
+      <http:operation location="/pagarFactura" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDocumento">
+      <http:operation location="/ConsultaDocumento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaHacienda">
+      <http:operation location="/ConsultaRespuestaHacienda" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRespuestaCorreo">
+      <http:operation location="/ConsultaRespuestaCorreo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GTICargaBatch">
+    <wsdl:port name="GTICargaBatchSoap" binding="tns:GTICargaBatchSoap">
+      <soap:address location="https://www.facturaelectronica.cr/wsCargaFacturav42/GTICargaBatch.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GTICargaBatchSoap12" binding="tns:GTICargaBatchSoap12">
+      <soap12:address location="https://www.facturaelectronica.cr/wsCargaFacturav42/GTICargaBatch.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GTICargaBatchHttpGet" binding="tns:GTICargaBatchHttpGet">
+      <http:address location="https://www.facturaelectronica.cr/wsCargaFacturav42/GTICargaBatch.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GTICargaBatchHttpPost" binding="tns:GTICargaBatchHttpPost">
+      <http:address location="https://www.facturaelectronica.cr/wsCargaFacturav42/GTICargaBatch.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

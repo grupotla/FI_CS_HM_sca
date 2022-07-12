@@ -1,0 +1,191 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Siteeeee.master.cs" Inherits="SiteMaster" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>SCA</title>
+    <script src="Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style2
+        {
+            width: 100%;
+            font-weight:bold;
+            background-color: #666666;
+        }
+        .style3
+        {
+            /*color: #808080;*/
+            color: White;
+        }
+        .style4
+        {
+            width: 60%;
+        }
+        .style6
+        {
+            font-size: large;
+        }
+        .style7
+        {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <%
+        UsuarioBean usuario = null;
+        usuario = (UsuarioBean)Session["userSCA"];
+    %>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    <span class="style3">SCA - SISTEMA DE CONTABILIZACION AUTOMATICA</span>
+                </h1>
+            </div>
+            <div class="loginDisplay">
+            V.1.10.0&nbsp;||&nbsp;
+            <asp:Button ID="btn_salir" runat="server" Text="Cerrar Sesion" 
+                    PostBackUrl="~/Logout.aspx" BackColor="#0066FF" BorderStyle="None" 
+                    Font-Bold="True" Font-Italic="True" ForeColor="White" />
+            </div>
+            <div class="clear hideSkiplink">
+            <asp:Menu ID="NavigationMenu" runat="server" Height="32px" Orientation="Horizontal" ForeColor="Black"
+                MaximumDynamicDisplayLevels ="2" BackColor="White"
+                DynamicHorizontalOffset="10" Font-Names="Verdana" Font-Size="1em"
+                StaticSubMenuIndent="10px" style="color: #FFFFFF" DynamicVerticalOffset="8" 
+                    Font-Bold="True">
+                <DynamicHoverStyle BackColor="Black" ForeColor="White" Font-Bold="true" Font-Italic="true" Font-Underline="true"/>
+                <DynamicMenuItemStyle HorizontalPadding="15px" VerticalPadding="2px" ForeColor="Black" BackColor="#EFEFEF" />
+            </asp:Menu>
+                <table align="right" cellpadding="0" cellspacing="0" class="style2">
+                            <tr>
+                                <td align="left" rowspan="2" valign="middle" width="80%" 
+                                    style="margin-left: 15px">
+                                    <asp:Label ID="lbl_nombre_empresa" runat="server" Font-Bold="True" 
+                                        Font-Size="Medium" ForeColor="White"></asp:Label>
+                                </td>
+                                <td align="center" width="5%" class="style7">
+                                    Usuario.:</td>
+                                <td align="center" width="10%" style="color: #FFFFFF">
+                                    <%=usuario.ID%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="style7">
+                                    IP.:</td>
+                                <td align="center" style="color: #FFFFFF">
+                                    <%= Request.ServerVariables["REMOTE_ADDR"]%>
+                                </td>
+                            </tr>
+                        </table>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <div class="footer_div">
+        <strong>POWERED BY AIMARGROUP 2,016</strong> - V.1.25<br />
+        <br />
+        <br />
+    </div>
+    <div class="footer" style="height: 130px">
+        <br />
+        <br />
+        <table align="center" cellpadding="0" cellspacing="0" class="style4">
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td class="style6">
+                    <strong><em>Tutorial&nbsp;</em></strong></td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td class="style6">
+                    <strong><em>Video Tutorial</em></strong></td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                                <strong><em>
+                                <asp:Button ID="btn_descargar_tutorial2" runat="server" BackColor="Black" 
+                                    BorderStyle="None" Font-Bold="True" ForeColor="White" 
+                                    onclick="btn_descargar_tutorial2_Click" Text="Descargar" />
+                                </em>
+                                </strong>
+                            </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                                <strong>
+                                <asp:Button ID="btn_descargar_tutorial" runat="server" BackColor="Black" 
+                                    BorderStyle="None" Font-Bold="True" ForeColor="White" 
+                                    onclick="btn_descargar_tutorial_Click" Text="Descargar" />
+                                </strong>
+                            </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
